@@ -17,8 +17,8 @@ Application built using nestjs and nextjs
 Application implements simle user authentication with 
 user credentials
 
-Frontend : NextJS, ReactJS, NextAuth, Tailwind CSS
-Backend : NestJS, Mongoose Swagger
+Frontend : NextJS, ReactJS, NextAuth, Tailwind CSS.
+Backend : NestJS, Mongoose Swagger.
 
 ### Features
 

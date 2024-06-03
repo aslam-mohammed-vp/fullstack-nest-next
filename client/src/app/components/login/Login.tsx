@@ -22,15 +22,15 @@ export default function Login({
 
   async function onSubmit(formData: FieldValues) {
     if (isSignUp) {
-      const fullname = formData.get('fullname') as string;
-      const email = formData.get('email') as string;
-      const password = formData.get('password') as string;
+      const fullname = formData.fullname as string;
+      const email = formData.email as string;
+      const password = formData.password as string;
       if (fullname && email && password) signUp(fullname, email, password);
     }
 
     signIn('credentials', {
-      email: formData.get('email'),
-      password: formData.get('password'),
+      email: formData.email,
+      password: formData.password,
       redirect: true,
       callbackUrl,
     });
@@ -48,7 +48,7 @@ export default function Login({
       {/* {"errors:" + JSON.stringify(errors)} */}
       <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full ">
         <h1 className="mb-8 text-3xl text-center">
-          {isSignUp ? 'Sign up' : 'Sign in'}{' '}
+          {isSignUp ? 'Sign up' : 'Log in'}{' '}
         </h1>
         {isSignUp && (
           <>
@@ -94,11 +94,13 @@ export default function Login({
           placeholder="Password"
           {...register('password', {
             required: 'You must specify a password',
-            pattern: {
-              value: passwordRegEx,
-              message:
-                'Password must have at least 8 characters, at least one letter, one number and one special character ',
-            },
+            pattern: isSignUp
+              ? {
+                  value: passwordRegEx,
+                  message:
+                    'Password must have at least 8 characters, at least one letter, one number and one special character ',
+                }
+              : {},
           })}
         />
         {errors && errors.password && (
@@ -133,7 +135,7 @@ export default function Login({
           type="submit"
           className="w-full text-center py-3 rounded bg-green-700 text-white hover:bg-green-dark focus:outline-none my-1 mt-4"
         >
-          {isSignUp ? 'Create Account' : 'Sign in'}
+          {isSignUp ? 'Create Account' : 'Log in'}
         </button>
       </div>
 
@@ -141,7 +143,7 @@ export default function Login({
         {isSignUp ? 'Already have an account?' : "Don't have an account?"}
         <a
           className="no-underline border-b border-blue text-blue"
-          href="/signIn"
+          href={`/signIn${!isSignUp ? '?isSignUp=true' : ''}`}
         >
           {' '}
           {isSignUp ? 'Log in' : 'Sign up'}

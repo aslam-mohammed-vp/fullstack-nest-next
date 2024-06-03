@@ -12,7 +12,7 @@ export default function Header() {
 
   async function handleSignOut() {
     const res = await signOutServer();
-    if (res.status === 201) signOut();
+    if (res.status === 200) signOut();
   }
 
   return (

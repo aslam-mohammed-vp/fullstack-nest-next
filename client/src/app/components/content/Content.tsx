@@ -10,7 +10,14 @@ export default function Content() {
       <p>
         {!!(session && session.user) &&
           `Hi ${session?.user?.name}. Weclome to the application`}
-        {!(session && session.user) && `Sign in to continue`}
+        {!(session && session.user) && (
+          <p>
+            <a href="/signIn" className="hover:underline">
+              Sign in
+            </a>{' '}
+            to continue
+          </p>
+        )}
       </p>
     </article>
   );

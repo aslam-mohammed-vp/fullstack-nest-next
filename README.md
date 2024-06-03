@@ -17,6 +17,9 @@ Application built using nestjs and nextjs
 Application implements simle user authentication with 
 user credentials
 
+Frontend : NextJS, ReactJS, NextAuth, Tailwind CSS
+Backend : NestJS, Mongoose Swagger
+
 ### Features
 
 - **User Authentication**: User can sign up/login/logout
@@ -24,6 +27,10 @@ user credentials
 ---
 
 ### Running the app
+
+Prerequisite:
+npm/yarn and  mongoDB should be installed.
+Create a DB with name 'nest-app'.
 
 Once you have the folder and are ready to start, you can run `yarn` (or `npm install`) from the root directory to install dependencies. After that, you can run:
 

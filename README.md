@@ -44,7 +44,7 @@ yarn start
 
 This will start the application in development mode.
 
-If you face issue in starting the next dev server with erro code 'ENOWORKSPACES' please run below command.
+If you face issue in starting the next dev server with error code 'ENOWORKSPACES' please run below command.
 
 
 ```bash

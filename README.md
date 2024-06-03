@@ -18,7 +18,7 @@ Application implements simle user authentication with
 user credentials
 
 ### Frontend : NextJS, ReactJS, NextAuth, Tailwind CSS.
-### Backend : NestJS, Mongoose Swagger.
+### Backend : NestJS, Mongoose, MongoDB, Passport, Swagger.
 
 ### Features
 

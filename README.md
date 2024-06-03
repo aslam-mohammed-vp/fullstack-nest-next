@@ -1,5 +1,5 @@
 
-#Full Stack Nest Next App
+# Full Stack Nest Next App
 
 Application built using nestjs and nextjs
 

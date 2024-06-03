@@ -8,7 +8,8 @@ export default function Content() {
   return (
     <article className="h-screen flex flex-col justify-center items-center">
       <p>
-        {!!(session && session.user) && `Welcome  ${session?.user?.name}`}
+        {!!(session && session.user) &&
+          `Hi ${session?.user?.name}. Weclome to the application`}
         {!(session && session.user) && `Sign in to continue`}
       </p>
     </article>
